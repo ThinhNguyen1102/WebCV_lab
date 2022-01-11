@@ -1,6 +1,4 @@
 window.addEventListener("load", function () {
-  const sliderMain = this.document.querySelector(".content");
-
   const buttonList = [];
   const btn__home = this.document.getElementById("btn__home");
   buttonList.push(btn__home);
@@ -14,7 +12,6 @@ window.addEventListener("load", function () {
   buttonList.push(btn__another);
   const btn__perInfo = this.document.getElementById("btn__perInfo");
   buttonList.push(btn__perInfo);
-
   const contentsList = [];
   const content__home = this.document.getElementById("content__home");
   contentsList.push(content__home);
@@ -35,48 +32,48 @@ window.addEventListener("load", function () {
 
   btn__home.addEventListener("click", () => {
     currContent = content__home;
-    currContent.style.display = "flex";
-    // currButton = btn__home;
-    // currButton.style.color = "#dd6a3d";
+    currButton = btn__home;
     setupContent();
+    setupStageButton();
   });
+
   btn__education.addEventListener("click", () => {
     currContent = content__education;
-    currContent.style.display = "flex";
-    // currButton = btn__education;
-    // currButton.style.color = "#dd6a3d";
+    currButton = btn__education;
     setupContent();
+    setupStageButton();
   });
+
   btn__skill.addEventListener("click", () => {
     currContent = content__skill;
-    currContent.style.display = "flex";
-    // currButton = btn__skill;
-    // currButton.style.color = "#dd6a3d";
+    currButton = btn__skill;
     setupContent();
+    setupStageButton();
   });
+
   btn__project.addEventListener("click", () => {
     currContent = content__project;
-    currContent.style.display = "flex";
-    // currButton = btn__project;
-    // currButton.style.color = "#dd6a3d";
+    currButton = btn__project;
     setupContent();
+    setupStageButton();
   });
+
   btn__another.addEventListener("click", () => {
     currContent = content__another;
-    currContent.style.display = "flex";
-    // currButton = btn__another;
-    // currButton.style.color = "#dd6a3d";
+    currButton = btn__another;
     setupContent();
+    setupStageButton();
   });
+
   btn__perInfo.addEventListener("click", () => {
     currContent = content__personal;
-    currContent.style.display = "flex";
-    // currButton = btn__perInfo;
-    // currButton.style.color = "#dd6a3d";
+    currButton = btn__perInfo;
     setupContent();
+    setupStageButton();
   });
 
   const setupContent = () => {
+    currContent.style.display = "flex";
     contentsList.forEach((val) => {
       if (val !== currContent) {
         val.style.display = "none";
@@ -85,9 +82,10 @@ window.addEventListener("load", function () {
   };
 
   const setupStageButton = () => {
+    currButton.querySelector("i").style.color = "#dd6a3d";
     buttonList.forEach((val) => {
       if (val !== currButton) {
-        val.style.color = "white";
+        val.querySelector("i").style.color = "#ffffff80";
       }
     });
   };
